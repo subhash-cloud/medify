@@ -1,0 +1,50 @@
+.navlinks {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+  }
+  
+  .navlinks a {
+    color: #102851;
+    text-decoration: none;
+    position: relative;
+    padding: 0.5rem;
+  }
+  
+  .navlink.activeLink::after {
+    content: "";
+    position: absolute;
+    bottom: -30px;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background-color: #2aa7ff;
+  }
+  
+  @media (max-width: 900px) {
+    .navlinks {
+      background: #102851;
+      position: fixed;
+      top: 0;
+      right: 0;
+      z-index: 9999;
+      width: 90vw;
+      height: 100vh;
+      transform: translateX(100%);
+      transition: transform 400ms ease;
+      flex-direction: column;
+    }
+  
+    .navlinks.active {
+      transform: translateX(0);
+    }
+  
+    .navlinks a {
+      color: #fff;
+    }
+  
+    .navlink.activeLink::after {
+      background-color: #fff;
+    }
+  }
+  
